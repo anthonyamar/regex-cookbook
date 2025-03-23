@@ -126,8 +126,6 @@ Matches exactly “hello”, “hi”, or “hey” as whole words, case-insensi
 
 Add or remove words inside `(word1|word2|...)` to adjust.
 
----
-
 ## 📅 Date
 
 ### Date in format YYYY-MM-DD
@@ -159,8 +157,6 @@ Examples:
 ❌ 1/1/2000
 
 This forces 2-digit month and day. Use `\/?` if the slash is optional.
-
----
 
 ## 🕒 Time
 
@@ -194,7 +190,6 @@ Examples:
 
 The `i` at the end makes it case-insensitive.
 
----
 ## ⌚ DateTime
 
 ### ISO 8601 datetime
@@ -234,8 +229,6 @@ Examples:
 ❌ user@.com
 
 To restrict domains (e.g. only .com), replace `\.[a-zA-Z]{2,}` with `\.com`.
-
----
 
 ## 🔒 Password
 
@@ -289,8 +282,6 @@ Matches international numbers that start with either `+` or `00`, followed by di
 ❌ 06 12 34 56 78
 
 Use `(?:\+|00)` to support both styles for international dialing.
-
----
 
 ## 🌐 URLs
 
@@ -373,7 +364,6 @@ Examples:
 ✅ https://localhost:8080/admin
 ❌ localhost:3000
 
----
 ## 📜 File Extensions
 
 ### File with extension
@@ -529,8 +519,6 @@ PascalCase segments separated by hyphens.
 ❌ HelloWorld
 ❌ hello-world
 
----
-
 ## 💻 HTML
 
 ### Match content inside HTML tags
@@ -584,8 +572,6 @@ Simple tag pair with content, not nested.
 
 ✅ `<b>Hello</b>`
 ❌ `<b><i>Bold</i></b>`
-
----
 
 ## 🎨 Colors
 
@@ -726,8 +712,6 @@ Matches a basic YAML key and value on a single line.
 ✅ user_id: 12345
 ❌ - item: value (list format)
 ❌ name "Jean"
-
----
 
 ## 🌍 IPs
 
@@ -902,8 +886,6 @@ Matches negative numbers written in parentheses, like `(1,234.56)` or `(1234,56)
 /^\(\d+(?:[.,]\d+)?\)$/
 ```
 
----
-
 ## 💰 Currency & Symbols
 
 ### Match currency symbol only
@@ -963,8 +945,6 @@ Matches percentages with or without decimal and space.
 ✅ 20.5%
 ✅ 20,5 %
 ❌ %20
-
----
 
 ## 💳 Finance
 
@@ -1118,8 +1098,6 @@ Matches anything between `<` and `>`, excluding nested or malformed tags.
 - Use `g` (global flag) if you want to match multiple shortcodes in one string.
 - Escape characters like `(`, `[`, `{` using `\` inside the regex.
 
----
-
 ## 🔁 Repetition & Structure
 
 ### Repeated character
@@ -1135,8 +1113,6 @@ Matches 3 or more of the same character in a row.
 
 Change `{2,}` to `{N-1,}` to match N repetitions.
 Example: `{6,}` matches 7 or more.
-
----
 
 ## 🖥️ Binary & Low-Level Patterns
 
@@ -1268,8 +1244,6 @@ Matches the 3-part JWT format (header.payload.signature), base64-url encoded.
 
 This doesn't validate the signature or payload content.
 
----
-
 ## 🇫🇷 France-Specific
 
 ### Match SIREN (9 digits)
@@ -1296,13 +1270,15 @@ This doesn't validate the signature or payload content.
 /^FR[\dA-Z]{2}\d{9}$/
 ```
 ✅ FR40303265045
+
 ✅ FRXX732829320
+
 ❌ FR40303265045123
+
 ❌ FR40 3032 6504 5
 
-Check rules per country for prefix and control key logic.
 
----
+Check rules per country for prefix and control key logic.
 
 ## 🤝 Contributing
 
@@ -1329,18 +1305,21 @@ Example:
 Matches strings with only uppercase letters.
 
 ✅ HELLO
+
 ✅ REGEXP
+
 ❌ Hello
+
 ❌ hello123
 
 To allow numbers too, change to `/^[A-Z0-9]+$/`
+
+---
 ```
 
 - Keep it **simple and free of regex jargon** – this is meant to be readable by everyone
 - Make sure every pattern is **tested and working** before submitting
 - Pull requests are reviewed and tested before merging – no untested expressions please 🙏
-
----
 
 ## 📝 License
 
