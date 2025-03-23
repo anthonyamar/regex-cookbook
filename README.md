@@ -35,7 +35,6 @@ Regex Cookbook is a practical, copy-paste-ready cheat sheet of real-world RegExp
 - [📝 License](#-license)
 
 ## 🧱 Basics
-
 ### Match numbers
 ```
 /\d+/
@@ -131,7 +130,6 @@ Matches exactly “hello”, “hi”, or “hey” as whole words, case-insensi
 Add or remove words inside `(word1|word2|...)` to adjust.
 
 ## 📅 Date
-
 ### Date in format YYYY-MM-DD
 ```
 /^\d{4}-\d{2}-\d{2}$/
@@ -161,7 +159,6 @@ Matches dates like month/day/year.
 This forces 2-digit month and day. Use `\/?` if the slash is optional.
 
 ## 🕒 Time
-
 ### 24-hour time (HH:MM)
 ```
 /^([01]\d|2[0-3]):[0-5]\d$/
@@ -191,7 +188,6 @@ Matches 12-hour time with AM or PM suffix.
 The `i` at the end makes it case-insensitive.
 
 ## ⌚ DateTime
-
 ### ISO 8601 datetime
 ```
 /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[\+\-]\d{2}:\d{2})$/
@@ -215,7 +211,6 @@ Matches a 10-digit timestamp in seconds.
 - ❌ 2023-01-01
 
 ## 📧 Email
-
 ### Basic email pattern
 ```
 /^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/
@@ -230,7 +225,6 @@ Matches standard email addresses.
 To restrict domains (e.g. only .com), replace `\.[a-zA-Z]{2,}` with `\.com`.
 
 ## 🔒 Password
-
 ### Complex password
 ```
 /^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*\W*)(?!.*\s).{8,16}$/
@@ -245,7 +239,6 @@ Accepts at least one number, one uppercase letter, one lowercase letter, and zer
 Change the numbers in `{8,16}` to adjust length. Use `{8,}` for "8 or more characters".
 
 ## 📱 Phone Numbers
-
 ### Basic international phone number
 ```
 /^\+\d{1,3}[\s.-]?\(?\d+\)?[\s.-]?\d+[\s.-]?\d+$/
@@ -282,7 +275,6 @@ Matches international numbers that start with either `+` or `00`, followed by di
 Use `(?:\+|00)` to support both styles for international dialing.
 
 ## 🌐 URLs
-
 ### Generic URL (http/https with subdomains and path)
 ```
 /https?:\/\/([\w.-]+)\.[a-z]{2,}(\/[\w\-._~:\/?#[\]@!$&'()*+,;=]*)?/i
@@ -390,9 +382,7 @@ Common image formats.
 - ✅ document.pdf
 - ❌ document.docx
 
----
 ## 🧬 Syntax
-
 ### flatcase
 ```
 /^[a-z]+$/
@@ -556,6 +546,7 @@ Matches HTML comments.
 - ✅ `<!-- This is a comment -->`
 
 ---
+
 ### HTML tag pair without nesting
 ```
 /<(\w+)[^>]*>([^<]*)<\/\1>/
@@ -566,7 +557,6 @@ Simple tag pair with content, not nested.
 - ❌ `<b><i>Bold</i></b>`
 
 ## 🎨 Colors
-
 ### Hexadecimal color (#RGB or #RRGGBB)
 ```
 /^#(?:[0-9a-fA-F]{3}){1,2}$/
@@ -683,7 +673,6 @@ Matches classic RAL color codes.
 ---
 
 ## 📦 Data Structures
-
 ### Match basic JSON object
 ```
 /^\{\s*"[^"]+"\s*:\s*.+\}$/
@@ -695,6 +684,8 @@ Matches a flat JSON object with a single key-value pair.
 ❌ name: "Jean"
 
 Use a proper parser for nested or valid JSON.
+
+---
 
 ### Match XML tag with content
 ```
@@ -768,10 +759,7 @@ Matches full-form IPv6 addresses.
 - ✅ `2001:0db8:85a3:0000:0000:8a2e:0370:7334`
 - ❌ `::1` (shortened form not supported by this regex)
 
----
-
 ## 🧩 Text
-
 ### No unicode characters (letters, numbers, basic punctuation)
 ```
 /^[\x00-\x7F]+$/
@@ -893,7 +881,6 @@ Matches negative numbers written in parentheses, like `(1,234.56)` or `(1234,56)
 ```
 
 ## 💰 Currency & Symbols
-
 ### Match currency symbol only
 ```
 /[\$\€\£\¥\₽\₹]/
@@ -953,7 +940,6 @@ Matches percentages with or without decimal and space.
 - ❌ %20
 
 ## 💳 Finance
-
 ### Match IBAN (general structure)
 ```
 /^[A-Z]{2}\d{2}[A-Z0-9]{11,30}$/
@@ -1030,7 +1016,6 @@ Matches semicolon-separated values.
 - ❌ a;b;\nc
 
 ## 🔖 Slugs & Identifiers
-
 ### URL slug
 ```
 /^[a-z0-9]+(?:-[a-z0-9]+)*$/
@@ -1056,7 +1041,6 @@ Matches a version 4 UUID.
 ---
 
 ## 🧩 Shortcodes & Custom Placeholders
-
 ### Match content inside `< >` (e.g. `<shortcode-identifier>`)
 ```
 /<([^<>]+)>/
@@ -1104,7 +1088,6 @@ Matches anything between `<` and `>`, excluding nested or malformed tags.
 - Escape characters like `(`, `[`, `{` using `\` inside the regex.
 
 ## 🔁 Repetition & Structure
-
 ### Repeated character
 ```
 /(.)\1{2,}/
@@ -1120,7 +1103,6 @@ Change `{2,}` to `{N-1,}` to match N repetitions.
 Example: `{6,}` matches 7 or more.
 
 ## 🖥️ Binary & Low-Level Patterns
-
 ### Binary octets (8 bits each)
 ```
 /([01]{8})/g
