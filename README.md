@@ -18,6 +18,7 @@ Regex Cookbook is a practical, copy-paste-ready cheat sheet of real-world RegExp
 - [🧬 Syntax](#-syntax)
 - [💻 HTML](#-html)
 - [🎨 Colors](#-colors)
+- [📦 Data Structures](#-data-structures)
 - [🌍 IPs](#-ips)
 - [🧍 Text](#-text)
 - [🔢 Numbers](#-numbers)
@@ -677,6 +678,20 @@ Matches classic RAL color codes.
 - ❌ RAL 210-50-20
 
 ---
+
+## 📦 Data Structures
+
+### Match basic JSON object
+```
+/^\{\s*"[^"]+"\s*:\s*.+\}$/
+```
+Matches a flat JSON object with a single key-value pair.
+
+✅ {"name": "Jean"}
+❌ {"name": "Jean", "age": 30} (multi-pair, nested)
+❌ name: "Jean"
+
+Use a proper parser for nested or valid JSON.
 
 ### Match XML tag with content
 ```
