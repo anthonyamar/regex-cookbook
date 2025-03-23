@@ -30,6 +30,7 @@ Regex Cookbook is a practical, copy-paste-ready cheat sheet of real-world RegExp
 - [🧹 Shortcodes](#-shortcodes--custom-placeholders)
 - [🔁 Repetition & Structure](#-repetition--structure)
 - [🖥️ Binary & Low-Level](#-binary--low-level-patterns)
+- [🔐 Encoding](#-encoding)
 - [🇫🇷 France-Specific](#-france-specific)
 - [🤝 Contributing](#-contributing)
 - [📝 License](#-license)
@@ -54,7 +55,7 @@ Matches one or more digits.
 Matches one or more lowercase English letters.
 
 - ✅ hello
-❌ HELLO
+- ❌ HELLO
 - ❌ Hello123
 
 ---
@@ -679,9 +680,9 @@ Matches classic RAL color codes.
 ```
 Matches a flat JSON object with a single key-value pair.
 
-✅ {"name": "Jean"}
-❌ {"name": "Jean", "age": 30} (multi-pair, nested)
-❌ name: "Jean"
+- ✅ {"name": "Jean"}
+- ❌ {"name": "Jean", "age": 30} (multi-pair, nested)
+- ❌ name: "Jean"
 
 Use a proper parser for nested or valid JSON.
 
@@ -1052,36 +1053,32 @@ Matches anything between `<` and `>`, excluding nested or malformed tags.
 - ❌ <<shortcode>>
 - ❌ <shortcode
 
----
+#### 🔧 How to adapt to other symbols
 
-### 🔧 How to adapt to other symbols
-
-#### Match `(shortcode)`
+##### Match `(shortcode)`
 ```
 /\(([^()]+)\)/
 ```
 
-#### Match `[shortcode]`
+##### Match `[shortcode]`
 ```
 /\[([^\[\]]+)\]/
 ```
 
-#### Match `{shortcode}`
+##### Match `{shortcode}`
 ```
 /\{([^{}]+)\}/
 ```
 
-#### Match `{{shortcode}}` (double braces)
+##### Match `{{shortcode}}` (double braces)
 ```
 /\{\{([^{}]+)\}\}/
 ```
 
-#### Match `<-shortcode->`
+##### Match `<-shortcode->`
 ```
 /<\-([^<>]+)\->/
 ```
-
----
 
 - `[^...]` ensures the content does not include the delimiters themselves.
 - Use `g` (global flag) if you want to match multiple shortcodes in one string.
@@ -1178,8 +1175,7 @@ Matches a Unix-like full path.
 - ✅ /var/log/nginx/access.log
 - ❌ C:\Program Files
 
----
-
+## 🔐 Encoding
 ### Base64-encoded string
 ```
 /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/
