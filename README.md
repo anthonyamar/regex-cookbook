@@ -1,6 +1,7 @@
 # Regex Cookbook – Copyable Patterns for Real-World Use
 
 Who likes writing regex? No one. Who needs regexp? Everyone!
+
 So stop googling regex. Start pasting them. 🧠
 
 Regex Cookbook is a practical, copy-paste-ready cheat sheet of real-world RegExp patterns, organized by category. From emails and dates to URLs, binary formats, colors, and beyond — no theory, just patterns that work.
@@ -30,6 +31,8 @@ Regex Cookbook is a practical, copy-paste-ready cheat sheet of real-world RegExp
 - [🔁 Repetition & Structure](#-repetition--structure)
 - [🖥️ Binary & Low-Level](#-binary--low-level-patterns)
 - [🇫🇷 France-Specific](#-france-specific)
+- [🤝 Contributing](#-contributing)
+- [📝 License](#-license)
 
 ## 🧱 Basics
 
