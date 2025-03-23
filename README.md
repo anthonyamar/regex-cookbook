@@ -1325,6 +1325,7 @@ Example:
 ```
 /^[A-Z]+$/
 ```
+```markdown
 Matches strings with only uppercase letters.
 
 ✅ HELLO
