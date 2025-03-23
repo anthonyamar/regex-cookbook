@@ -1,6 +1,6 @@
 # Regex Cookbook – Copyable Patterns for Real-World Use
 
-Who likes writing regex? No one. Who needs regexp? Everyone!
+Who likes writing regex? No one. Who needs regex? Everyone!
 
 So stop googling regex. Start pasting them. 🧠
 
@@ -30,7 +30,7 @@ Regex Cookbook is a practical, copy-paste-ready cheat sheet of real-world RegExp
 - [🧹 Shortcodes](#-shortcodes--custom-placeholders)
 - [🔁 Repetition & Structure](#-repetition--structure)
 - [🖥️ Binary & Low-Level](#-binary--low-level-patterns)
-- [🔐 Encoding](#-encoding)
+- [🔐 Cryptography](#-cryptography)
 - [🇫🇷 France-Specific](#-france-specific)
 - [🤝 Contributing](#-contributing)
 - [📝 License](#-license)
@@ -1175,7 +1175,7 @@ Matches a Unix-like full path.
 - ✅ /var/log/nginx/access.log
 - ❌ C:\Program Files
 
-## 🔐 Encoding
+## 🔐 Cryptography
 ### Base64-encoded string
 ```
 /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/
@@ -1261,12 +1261,12 @@ Check rules per country for prefix and control key logic.
 
 ## 🤝 Contributing
 
-You're welcome to contribute new patterns to this cheat sheet!
+You're welcome to contribute new patterns to this cheat sheet, or improve existing, either by the use of PR or issues!
 
 To keep things accessible and consistent, please follow these guidelines:
 
 - Use the existing format for each entry:
-  - A **clear title** (`##` level)
+  - A **clear title** (`###` level)
   - A **brief, plain-language explanation** of the use case
   - The **regular expression** inside a code block
   - ✅ **Working examples** and ❌ **non-matching examples**
