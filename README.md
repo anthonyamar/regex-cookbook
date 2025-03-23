@@ -1,11 +1,9 @@
-# regexp-test
+# Regex Cookbook – Copyable Patterns for Real-World Use
 
-Who likes writing regexp? No one. Who needs regexp? Everyone!
-So here's a collection of handy regexp for every dev, listed by categories
+Who likes writing regex? No one. Who needs regexp? Everyone!
+So stop googling regex. Start pasting them. 🧠
 
-
-Who likes writing regexp? No one. Who needs regexp? Everyone!
-So here's a collection of handy regexp for every dev, listed by categories:
+Regex Cookbook is a practical, copy-paste-ready cheat sheet of real-world RegExp patterns, organized by category. From emails and dates to URLs, binary formats, colors, and beyond — no theory, just patterns that work.
 
 ## Index
 - [🧱 Basics](#-basics)
@@ -1305,3 +1303,45 @@ This doesn't validate the signature or payload content.
 Check rules per country for prefix and control key logic.
 
 ---
+
+## 🤝 Contributing
+
+You're welcome to contribute new patterns to this cheat sheet!
+
+To keep things accessible and consistent, please follow these guidelines:
+
+- Use the existing format for each entry:
+  - A **clear title** (`##` level)
+  - A **brief, plain-language explanation** of the use case
+  - The **regular expression** inside a code block
+  - ✅ **Working examples** and ❌ **non-matching examples**
+  - A short **tip to adapt or tweak** the expression (when applicable)
+
+Example:
+
+```markdown
+### Match UPPERCASE words
+```
+```
+/^[A-Z]+$/
+```
+Matches strings with only uppercase letters.
+
+✅ HELLO
+✅ REGEXP
+❌ Hello
+❌ hello123
+
+To allow numbers too, change to `/^[A-Z0-9]+$/`
+```
+
+- Keep it **simple and free of regex jargon** – this is meant to be readable by everyone
+- Make sure every pattern is **tested and working** before submitting
+- Pull requests are reviewed and tested before merging – no untested expressions please 🙏
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License**.
+Feel free to use, copy, modify, and distribute – contributions welcome!
