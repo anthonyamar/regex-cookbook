@@ -38,9 +38,9 @@ Regex Cookbook is a practical, copy-paste-ready cheat sheet of real-world RegExp
 ```
 Matches one or more digits.
 
-✅ 123
-✅ 007
-❌ abc
+- ✅ 123
+- ✅ 007
+- ❌ abc
 
 ---
 
@@ -50,9 +50,9 @@ Matches one or more digits.
 ```
 Matches one or more lowercase English letters.
 
-✅ hello
+- ✅ hello
 ❌ HELLO
-❌ Hello123
+- ❌ Hello123
 
 ---
 
@@ -62,10 +62,10 @@ Matches one or more lowercase English letters.
 ```
 Matches one or more uppercase English letters.
 
-✅ ABC
-✅ HELLO
-❌ Hello
-❌ abc
+- ✅ ABC
+- ✅ HELLO
+- ❌ Hello
+- ❌ abc
 
 ---
 
@@ -75,9 +75,9 @@ Matches one or more uppercase English letters.
 ```
 Matches one or more punctuation characters.
 
-✅ ,!?
-✅ (hello)
-❌ hello
+- ✅ ,!?
+- ✅ (hello)
+- ❌ hello
 
 ---
 
@@ -87,11 +87,11 @@ Matches one or more punctuation characters.
 ```
 Matches any letter from any language (including accents and scripts like Arabic, Cyrillic, etc.).
 
-✅ é
-✅ ç
-✅ æ
-✅ أ
-❌ 123
+- ✅ é
+- ✅ ç
+- ✅ æ
+- ✅ أ
+- ❌ 123
 
 Requires the Unicode flag `/u`.
 
@@ -103,10 +103,10 @@ Requires the Unicode flag `/u`.
 ```
 Matches any emoji character.
 
-✅ 😊
-✅ 💡
-✅ 🏄‍♂️
-❌ Hello
+- ✅ 😊
+- ✅ 💡
+- ✅ 🏄‍♂️
+- ❌ Hello
 
 Requires modern engines (JS ES2018+). Not all engines support `\p{Emoji}`.
 
@@ -118,11 +118,11 @@ Requires modern engines (JS ES2018+). Not all engines support `\p{Emoji}`.
 ```
 Matches exactly “hello”, “hi”, or “hey” as whole words, case-insensitive.
 
-✅ hello
-✅ Hi
-✅ HEY
-❌ helloo
-❌ ohhey
+- ✅ hello
+- ✅ Hi
+- ✅ HEY
+- ❌ helloo
+- ❌ ohhey
 
 Add or remove words inside `(word1|word2|...)` to adjust.
 
@@ -134,11 +134,10 @@ Add or remove words inside `(word1|word2|...)` to adjust.
 ```
 Matches a date formatted as year-month-day (ISO 8601).
 
-Examples:
-✅ 2023-12-25
-✅ 1999-01-01
-❌ 12-25-2023
-❌ 2023/12/25
+- ✅ 2023-12-25
+- ✅ 1999-01-01
+- ❌ 12-25-2023
+- ❌ 2023/12/25
 
 Change `-` to `/` or `.` if your date format uses different separators.
 
@@ -150,11 +149,10 @@ Change `-` to `/` or `.` if your date format uses different separators.
 ```
 Matches dates like month/day/year.
 
-Examples:
-✅ 12/25/2023
-✅ 01/01/2000
-❌ 25/12/2023
-❌ 1/1/2000
+- ✅ 12/25/2023
+- ✅ 01/01/2000
+- ❌ 25/12/2023
+- ❌ 1/1/2000
 
 This forces 2-digit month and day. Use `\/?` if the slash is optional.
 
@@ -166,11 +164,10 @@ This forces 2-digit month and day. Use `\/?` if the slash is optional.
 ```
 Matches a valid time in 24-hour format.
 
-Examples:
-✅ 09:30
-✅ 23:59
-❌ 24:00
-❌ 9:5
+- ✅ 09:30
+- ✅ 23:59
+- ❌ 24:00
+- ❌ 9:5
 
 To allow optional leading zeros, change `[01]\d` to `\d{1,2}`.
 
@@ -182,11 +179,10 @@ To allow optional leading zeros, change `[01]\d` to `\d{1,2}`.
 ```
 Matches 12-hour time with AM or PM suffix.
 
-Examples:
-✅ 10:45 AM
-✅ 1:30 pm
-❌ 13:00 PM
-❌ 10:75 AM
+- ✅ 10:45 AM
+- ✅ 1:30 pm
+- ❌ 13:00 PM
+- ❌ 10:75 AM
 
 The `i` at the end makes it case-insensitive.
 
@@ -198,9 +194,9 @@ The `i` at the end makes it case-insensitive.
 ```
 Full ISO datetime with timezone.
 
-✅ 2023-10-12T14:48:00Z
-✅ 2023-10-12T14:48:00+02:00
-❌ 2023-10-12 14:48:00
+- ✅ 2023-10-12T14:48:00Z
+- ✅ 2023-10-12T14:48:00+02:00
+- ❌ 2023-10-12 14:48:00
 
 ---
 
@@ -210,9 +206,9 @@ Full ISO datetime with timezone.
 ```
 Matches a 10-digit timestamp in seconds.
 
-✅ 1617181723
-❌ 161718 (too short)
-❌ 2023-01-01
+- ✅ 1617181723
+- ❌ 161718 (too short)
+- ❌ 2023-01-01
 
 ## 📧 Email
 
@@ -222,11 +218,10 @@ Matches a 10-digit timestamp in seconds.
 ```
 Matches standard email addresses.
 
-Examples:
-✅ user@example.com
-✅ john.doe@mail.co.uk
-❌ user@@example.com
-❌ user@.com
+- ✅ user@example.com
+- ✅ john.doe@mail.co.uk
+- ❌ user@@example.com
+- ❌ user@.com
 
 To restrict domains (e.g. only .com), replace `\.[a-zA-Z]{2,}` with `\.com`.
 
@@ -238,11 +233,10 @@ To restrict domains (e.g. only .com), replace `\.[a-zA-Z]{2,}` with `\.com`.
 ```
 Accepts at least one number, one uppercase letter, one lowercase letter, and zero or more special characters, with a length between 8 to 16 characters.
 
-Examples:
-✅ Password1?
-✅ *pwD123!:?+
-❌ password
-❌ my super secure password
+- ✅ Password1?
+- ✅ *pwD123!:?+
+- ❌ password
+- ❌ my super secure password
 
 Change the numbers in `{8,16}` to adjust length. Use `{8,}` for "8 or more characters".
 
@@ -254,9 +248,9 @@ Change the numbers in `{8,16}` to adjust length. Use `{8,}` for "8 or more chara
 ```
 Matches common international formats.
 
-✅ +33 6 12 34 56 78
-✅ +1 (123) 456-7890
-❌ 06.12.34.56.78 (without +)
+- ✅ +33 6 12 34 56 78
+- ✅ +1 (123) 456-7890
+- ❌ 06.12.34.56.78 (without +)
 
 ### Match international prefix (e.g. +33, +1, +867)
 ```
@@ -264,9 +258,9 @@ Matches common international formats.
 ```
 Extracts the international prefix from a phone number starting with `+`.
 
-✅ +33 6 12 34 56 78 → captures `33`
-✅ +1 (123) 456-7890 → captures `1`
-❌ 0033 6 12 34 56 78
+- ✅ +33 6 12 34 56 78 → captures `33`
+- ✅ +1 (123) 456-7890 → captures `1`
+- ❌ 0033 6 12 34 56 78
 
 ---
 
@@ -276,10 +270,10 @@ Extracts the international prefix from a phone number starting with `+`.
 ```
 Matches international numbers that start with either `+` or `00`, followed by digits.
 
-✅ +33 6 12 34 56 78
-✅ 0033 6 12 34 56 78
-✅ +1-123-456-7890
-❌ 06 12 34 56 78
+- ✅ +33 6 12 34 56 78
+- ✅ 0033 6 12 34 56 78
+- ✅ +1-123-456-7890
+- ❌ 06 12 34 56 78
 
 Use `(?:\+|00)` to support both styles for international dialing.
 
@@ -291,10 +285,9 @@ Use `(?:\+|00)` to support both styles for international dialing.
 ```
 Matches URLs with http or https, optional subdomain and path.
 
-Examples:
-✅ https://example.com
-✅ http://blog.example.co.uk/path/to/page
-❌ ftp://example.com
+- ✅ https://example.com
+- ✅ http://blog.example.co.uk/path/to/page
+- ❌ ftp://example.com
 
 To allow ports (e.g. `:3000`), add `(:\d+)?` after the domain.
 
@@ -306,11 +299,10 @@ To allow ports (e.g. `:3000`), add `(:\d+)?` after the domain.
 ```
 Matches only the domain.
 
-Examples:
-✅ google.com
-✅ example.co.uk
-❌ http://google.com
-❌ google
+- ✅ google.com
+- ✅ example.co.uk
+- ❌ http://google.com
+- ❌ google
 
 ---
 
@@ -320,10 +312,9 @@ Examples:
 ```
 Matches only https full domains without subdomains.
 
-Examples:
-✅ https://example.com
-❌ https://sub.example.com
-❌ http://example.com
+- ✅ https://example.com
+- ❌ https://sub.example.com
+- ❌ http://example.com
 
 ---
 
@@ -333,10 +324,9 @@ Examples:
 ```
 Matches FTP links with optional path.
 
-Examples:
-✅ ftp://files.example.com
-✅ ftp://example.com/folder/file.txt
-❌ http://example.com
+- ✅ ftp://files.example.com
+- ✅ ftp://example.com/folder/file.txt
+- ❌ http://example.com
 
 ---
 
@@ -346,10 +336,9 @@ Examples:
 ```
 Matches an IP-based URL.
 
-Examples:
-✅ http://192.168.0.1
-✅ https://127.0.0.1/index.html
-❌ 192.168.0.1
+- ✅ http://192.168.0.1
+- ✅ https://127.0.0.1/index.html
+- ❌ 192.168.0.1
 
 ---
 
@@ -359,10 +348,9 @@ Examples:
 ```
 Matches localhost with port and optional path.
 
-Examples:
-✅ http://localhost:3000
-✅ https://localhost:8080/admin
-❌ localhost:3000
+- ✅ http://localhost:3000
+- ✅ https://localhost:8080/admin
+- ❌ localhost:3000
 
 ## 📜 File Extensions
 
@@ -372,9 +360,9 @@ Examples:
 ```
 Basic filename with extension.
 
-✅ file.txt
-✅ my photo.jpeg
-❌ file
+- ✅ file.txt
+- ✅ my photo.jpeg
+- ❌ file
 
 ---
 
@@ -384,9 +372,9 @@ Basic filename with extension.
 ```
 Common image formats.
 
-✅ logo.png
-✅ photo.JPG
-❌ file.pdf
+- ✅ logo.png
+- ✅ photo.JPG
+- ❌ file.pdf
 
 ---
 
@@ -395,8 +383,8 @@ Common image formats.
 /^.+\.pdf$/i
 ```
 
-✅ document.pdf
-❌ document.docx
+- ✅ document.pdf
+- ❌ document.docx
 
 ---
 ## 🧬 Syntax
@@ -407,9 +395,9 @@ Common image formats.
 ```
 All lowercase, no separator.
 
-✅ hello
-❌ Hello
-❌ helloWorld
+- ✅ hello
+- ❌ Hello
+- ❌ helloWorld
 
 ---
 
@@ -419,9 +407,9 @@ All lowercase, no separator.
 ```
 All uppercase, no separator.
 
-✅ HELLO
-❌ Hello
-❌ HELLO_WORLD
+- ✅ HELLO
+- ❌ Hello
+- ❌ HELLO_WORLD
 
 ---
 
@@ -431,9 +419,9 @@ All uppercase, no separator.
 ```
 Starts lowercase, words joined with uppercase letters.
 
-✅ helloWorld
-❌ HelloWorld
-❌ hello_world
+- ✅ helloWorld
+- ❌ HelloWorld
+- ❌ hello_world
 
 ---
 
@@ -443,9 +431,9 @@ Starts lowercase, words joined with uppercase letters.
 ```
 Each word starts with a capital letter.
 
-✅ HelloWorld
-❌ helloWorld
-❌ Hello_World
+- ✅ HelloWorld
+- ❌ helloWorld
+- ❌ Hello_World
 
 ---
 
@@ -455,10 +443,10 @@ Each word starts with a capital letter.
 ```
 Lowercase words separated by underscores.
 
-✅ hello_world
-✅ foo_bar_baz
-❌ Hello_World
-❌ helloWorld
+- ✅ hello_world
+- ✅ foo_bar_baz
+- ❌ Hello_World
+- ❌ helloWorld
 
 ---
 
@@ -468,9 +456,9 @@ Lowercase words separated by underscores.
 ```
 All uppercase with underscores.
 
-✅ HELLO_WORLD
-❌ Hello_World
-❌ hello_world
+- ✅ HELLO_WORLD
+- ❌ Hello_World
+- ❌ hello_world
 
 ---
 
@@ -480,9 +468,9 @@ All uppercase with underscores.
 ```
 PascalCase segments separated by underscores.
 
-✅ Hello_World_Example
-❌ hello_world
-❌ HelloWorld
+- ✅ Hello_World_Example
+- ❌ hello_world
+- ❌ HelloWorld
 
 ---
 
@@ -492,9 +480,9 @@ PascalCase segments separated by underscores.
 ```
 Lowercase words separated by hyphens.
 
-✅ hello-world
-❌ Hello-World
-❌ helloWorld
+- ✅ hello-world
+- ❌ Hello-World
+- ❌ helloWorld
 
 ---
 
@@ -504,8 +492,8 @@ Lowercase words separated by hyphens.
 ```
 Uppercase words separated by hyphens.
 
-✅ HELLO-WORLD
-❌ hello-world
+- ✅ HELLO-WORLD
+- ❌ hello-world
 
 ---
 
@@ -515,9 +503,9 @@ Uppercase words separated by hyphens.
 ```
 PascalCase segments separated by hyphens.
 
-✅ Hello-World-Example
-❌ HelloWorld
-❌ hello-world
+- ✅ Hello-World-Example
+- ❌ HelloWorld
+- ❌ hello-world
 
 ## 💻 HTML
 
@@ -527,8 +515,8 @@ PascalCase segments separated by hyphens.
 ```
 Captures the content between tags.
 
-✅ `<b>Hello</b>` → `Hello`
-❌ `<b></b>`
+- ✅ `<b>Hello</b>` → `Hello`
+- ❌ `<b></b>`
 
 ---
 
@@ -538,8 +526,8 @@ Captures the content between tags.
 ```
 Captures entire tag with content.
 
-✅ `<div class="x">Hello</div>`
-❌ `<img src="x.jpg"/>`
+- ✅ `<div class="x">Hello</div>`
+- ❌ `<img src="x.jpg"/>`
 
 ---
 
@@ -549,9 +537,9 @@ Captures entire tag with content.
 ```
 Matches self-closing HTML tags.
 
-✅ `<img src="image.jpg" />`
-✅ `<br/>`
-❌ `<div>Hello</div>`
+- ✅ `<img src="image.jpg" />`
+- ✅ `<br/>`
+- ❌ `<div>Hello</div>`
 
 ---
 
@@ -561,7 +549,7 @@ Matches self-closing HTML tags.
 ```
 Matches HTML comments.
 
-✅ `<!-- This is a comment -->`
+- ✅ `<!-- This is a comment -->`
 
 ---
 ### HTML tag pair without nesting
@@ -570,8 +558,8 @@ Matches HTML comments.
 ```
 Simple tag pair with content, not nested.
 
-✅ `<b>Hello</b>`
-❌ `<b><i>Bold</i></b>`
+- ✅ `<b>Hello</b>`
+- ❌ `<b><i>Bold</i></b>`
 
 ## 🎨 Colors
 
@@ -581,11 +569,11 @@ Simple tag pair with content, not nested.
 ```
 Matches 3- or 6-digit hexadecimal color codes.
 
-✅ #fff
-✅ #FFFFFF
-✅ #123abc
-❌ #abcd
-❌ 123456
+- ✅ #fff
+- ✅ #FFFFFF
+- ✅ #123abc
+- ❌ #abcd
+- ❌ 123456
 
 ---
 
@@ -595,10 +583,10 @@ Matches 3- or 6-digit hexadecimal color codes.
 ```
 Matches an `rgb()` color with values 0–255.
 
-✅ rgb(255, 0, 127)
-✅ rgb( 0 , 255 , 64 )
-❌ rgb(300,0,0)
-❌ rgba(255,0,0,0.5)
+- ✅ rgb(255, 0, 127)
+- ✅ rgb( 0 , 255 , 64 )
+- ❌ rgb(300,0,0)
+- ❌ rgba(255,0,0,0.5)
 
 ---
 
@@ -608,10 +596,10 @@ Matches an `rgb()` color with values 0–255.
 ```
 Matches an `rgba()` color with alpha 0–1.
 
-✅ rgba(255, 0, 127, 0.5)
-✅ rgba(0, 0, 0, 1)
-❌ rgba(0, 0, 0)
-❌ rgba(255,255,255,1.5)
+- ✅ rgba(255, 0, 127, 0.5)
+- ✅ rgba(0, 0, 0, 1)
+- ❌ rgba(0, 0, 0)
+- ❌ rgba(255,255,255,1.5)
 
 ---
 
@@ -621,10 +609,10 @@ Matches an `rgba()` color with alpha 0–1.
 ```
 Matches `hsl()` values where hue is 0–360, sat/light are percentages.
 
-✅ hsl(120, 100%, 50%)
-✅ hsl(0,0%,0%)
-❌ hsl(400,100,50)
-❌ hsl(120, 50, 50)
+- ✅ hsl(120, 100%, 50%)
+- ✅ hsl(0,0%,0%)
+- ❌ hsl(400,100,50)
+- ❌ hsl(120, 50, 50)
 
 ---
 
@@ -634,10 +622,10 @@ Matches `hsl()` values where hue is 0–360, sat/light are percentages.
 ```
 Matches OKLCH format with optional alpha (`/0.5`).
 
-✅ oklch(0.628 0.12 281.07)
-✅ oklch(0.628 0.12 281.07 / 0.5)
-❌ oklch(0.628, 0.12, 281.07)
-❌ oklch(0.6 0.2)
+- ✅ oklch(0.628 0.12 281.07)
+- ✅ oklch(0.628 0.12 281.07 / 0.5)
+- ❌ oklch(0.628, 0.12, 281.07)
+- ❌ oklch(0.6 0.2)
 
 ---
 
@@ -647,10 +635,10 @@ Matches OKLCH format with optional alpha (`/0.5`).
 ```
 Matches CMYK color values with percentages for cyan, magenta, yellow, and black.
 
-✅ cmyk(0%, 100%, 100%, 0%)
-✅ cmyk(25%, 10%, 0%, 80%)
-❌ cmyk(100, 0, 0, 0) (missing `%`)
-❌ cmyk(0%, 0%, 0%)
+- ✅ cmyk(0%, 100%, 100%, 0%)
+- ✅ cmyk(25%, 10%, 0%, 80%)
+- ❌ cmyk(100, 0, 0, 0) (missing `%`)
+- ❌ cmyk(0%, 0%, 0%)
 
 ---
 
@@ -660,11 +648,11 @@ Matches CMYK color values with percentages for cyan, magenta, yellow, and black.
 ```
 Matches Pantone codes with optional suffix like `C`, `U`, etc.
 
-✅ Pantone 300
-✅ Pantone 300 C
-✅ Pantone 485U
-❌ Pantone red
-❌ Pantone 30A
+- ✅ Pantone 300
+- ✅ Pantone 300 C
+- ✅ Pantone 485U
+- ❌ Pantone red
+- ❌ Pantone 30A
 
 ---
 
@@ -674,19 +662,19 @@ Matches Pantone codes with optional suffix like `C`, `U`, etc.
 ```
 Matches classic RAL color codes.
 
-✅ RAL 3020
-✅ RAL3003
-❌ RAL red
-❌ RAL 123
+- ✅ RAL 3020
+- ✅ RAL3003
+- ❌ RAL red
+- ❌ RAL 123
 
 💡 You can extend this to RAL Design (e.g. `RAL 210 50 20`) with:
 ```
 /^RAL\s(\d{3})\s(\d{2})\s(\d{2})$/
 ```
 
-✅ RAL 210 50 20
-❌ RAL 2105020
-❌ RAL 210-50-20
+- ✅ RAL 210 50 20
+- ❌ RAL 2105020
+- ❌ RAL 210-50-20
 
 ---
 
@@ -696,9 +684,9 @@ Matches classic RAL color codes.
 ```
 Matches any XML element with opening and closing tags.
 
-✅ `<data>Hello</data>`
-✅ `<tag attr="x">Value</tag>`
-❌ `<data />`
+- ✅ `<data>Hello</data>`
+- ✅ `<tag attr="x">Value</tag>`
+- ❌ `<data />`
 
 ---
 
@@ -708,10 +696,10 @@ Matches any XML element with opening and closing tags.
 ```
 Matches a basic YAML key and value on a single line.
 
-✅ name: Jean
-✅ user_id: 12345
-❌ - item: value (list format)
-❌ name "Jean"
+- ✅ name: Jean
+- ✅ user_id: 12345
+- ❌ - item: value (list format)
+- ❌ name "Jean"
 
 ## 🌍 IPs
 
@@ -721,9 +709,9 @@ Matches a basic YAML key and value on a single line.
 ```
 Matches standard IPv4 format.
 
-✅ 192.168.0.1
-✅ 8.8.8.8
-❌ 999.999.999.999 (invalid range, but matches)
+- ✅ 192.168.0.1
+- ✅ 8.8.8.8
+- ❌ 999.999.999.999 (invalid range, but matches)
 
 For stricter check, validate each octet is <= 255 programmatically.
 
@@ -734,10 +722,10 @@ For stricter check, validate each octet is <= 255 programmatically.
 ```
 Matches an IPv4 address followed by a port (e.g. `:8080`).
 
-✅ 127.0.0.1:3000
-✅ 192.168.1.10:80
-❌ 192.168.1.10
-❌ localhost:3000
+- ✅ 127.0.0.1:3000
+- ✅ 192.168.1.10:80
+- ❌ 192.168.1.10
+- ❌ localhost:3000
 
 ---
 ### Match IPv4 CIDR block
@@ -746,10 +734,10 @@ Matches an IPv4 address followed by a port (e.g. `:8080`).
 ```
 Matches IPv4 blocks in CIDR notation.
 
-✅ 192.168.0.0/24
-✅ 10.0.0.0/8
-❌ 192.168.0.1
-❌ /24
+- ✅ 192.168.0.0/24
+- ✅ 10.0.0.0/8
+- ❌ 192.168.0.1
+- ❌ /24
 
 ---
 
@@ -759,8 +747,8 @@ Matches IPv4 blocks in CIDR notation.
 ```
 Matches full-form IPv6 addresses.
 
-✅ `2001:0db8:85a3:0000:0000:8a2e:0370:7334`
-❌ `::1` (shortened form not supported by this regex)
+- ✅ `2001:0db8:85a3:0000:0000:8a2e:0370:7334`
+- ❌ `::1` (shortened form not supported by this regex)
 
 ---
 
@@ -772,9 +760,9 @@ Matches full-form IPv6 addresses.
 ```
 Accepts only basic ASCII characters.
 
-✅ Bank Statement 10
-❌ Déclaration bancaire
-❌ Statement💸
+- ✅ Bank Statement 10
+- ❌ Déclaration bancaire
+- ❌ Statement💸
 
 ---
 
@@ -784,9 +772,9 @@ Accepts only basic ASCII characters.
 ```
 Only allows ASCII letters and punctuation.
 
-✅ Bank Statement
-❌ Statement 10
-❌ Résumé
+- ✅ Bank Statement
+- ❌ Statement 10
+- ❌ Résumé
 
 ---
 
@@ -796,8 +784,8 @@ Only allows ASCII letters and punctuation.
 ```
 Rejects any string containing emojis in the emoticon range.
 
-✅ Hello world
-❌ Hello 😊
+- ✅ Hello world
+- ❌ Hello 😊
 
 Use different unicode ranges for other emoji types.
 
@@ -809,9 +797,9 @@ Use different unicode ranges for other emoji types.
 ```
 Only numbers.
 
-✅ 123456
-❌ 123 456
-❌ 12a34
+- ✅ 123456
+- ❌ 123 456
+- ❌ 12a34
 
 ---
 ### Decimal with dot
@@ -820,9 +808,9 @@ Only numbers.
 ```
 Matches numbers with optional decimal.
 
-✅ 12
-✅ 12.34
-❌ 12,34
+- ✅ 12
+- ✅ 12.34
+- ❌ 12,34
 
 To use comma instead of dot, replace `\.` with `,`.
 
@@ -833,10 +821,10 @@ To use comma instead of dot, replace `\.` with `,`.
 ```
 Matches whole numbers, including negative ones.
 
-✅ 42
-✅ -15
-❌ 3.14
-❌ 1,000
+- ✅ 42
+- ✅ -15
+- ❌ 3.14
+- ❌ 1,000
 
 ---
 
@@ -846,10 +834,10 @@ Matches whole numbers, including negative ones.
 ```
 Matches decimal numbers with optional minus sign.
 
-✅ -12.34
-✅ 5.0
-✅ 42
-❌ 5,0
+- ✅ -12.34
+- ✅ 5.0
+- ✅ 42
+- ❌ 5,0
 
 ---
 
@@ -859,10 +847,10 @@ Matches decimal numbers with optional minus sign.
 ```
 Matches prices with optional 2 decimal places.
 
-✅ 10
-✅ 10.00
-❌ 10.0
-❌ 10.000
+- ✅ 10
+- ✅ 10.00
+- ❌ 10.0
+- ❌ 10.000
 
 Change `\.` to `,` for locales using comma separators.
 
@@ -872,13 +860,13 @@ Change `\.` to `,` for locales using comma separators.
 ```
 Matches negative numbers written in parentheses, like `(1,234.56)` or `(1234,56)`. Accepts both `.` and `,` for decimal or thousand separators.
 
-✅ (123)
-✅ (1,234.56)
-✅ (1234,56)
-✅ (1.234,99)
-❌ -123
-❌ ( 123 )
-❌ (1234.567.89)
+- ✅ (123)
+- ✅ (1,234.56)
+- ✅ (1234,56)
+- ✅ (1.234,99)
+- ❌ -123
+- ❌ ( 123 )
+- ❌ (1234.567.89)
 
 💡 To force dot or comma for decimal, replace `[.,]` by `\.` or `,`.
 💡 If you don’t use thousands separators, simplify to:
@@ -894,12 +882,12 @@ Matches negative numbers written in parentheses, like `(1,234.56)` or `(1234,56)
 ```
 Matches standalone currency symbols.
 
-✅ $
-✅ €
-✅ £
-✅ ¥
-❌ 100
-❌ 10€
+- ✅ $
+- ✅ €
+- ✅ £
+- ✅ ¥
+- ❌ 100
+- ❌ 10€
 
 Add or remove symbols inside the brackets to customize.
 
@@ -911,10 +899,10 @@ Add or remove symbols inside the brackets to customize.
 ```
 Matches currencies like `$100`, `£ 100.83`, with or without space between symbol and number. Accepts comma or dot as decimal.
 
-✅ $100
-✅ € 100,50
-✅ £99.99
-❌ 100€
+- ✅ $100
+- ✅ € 100,50
+- ✅ £99.99
+- ❌ 100€
 
 Change `[.,]` to force one decimal separator.
 Use `[.,]\d{2}` to force 2 decimals.
@@ -927,10 +915,10 @@ Use `[.,]\d{2}` to force 2 decimals.
 ```
 Matches formats like `100€`, `1.500,00 €`, with optional space.
 
-✅ 10€
-✅ 99.99€
-✅ 1 000,00 €
-❌ $100
+- ✅ 10€
+- ✅ 99.99€
+- ✅ 1 000,00 €
+- ❌ $100
 
 ---
 
@@ -940,11 +928,11 @@ Matches formats like `100€`, `1.500,00 €`, with optional space.
 ```
 Matches percentages with or without decimal and space.
 
-✅ 20%
-✅ 20 %
-✅ 20.5%
-✅ 20,5 %
-❌ %20
+- ✅ 20%
+- ✅ 20 %
+- ✅ 20.5%
+- ✅ 20,5 %
+- ❌ %20
 
 ## 💳 Finance
 
@@ -954,9 +942,9 @@ Matches percentages with or without decimal and space.
 ```
 Matches IBAN format (country code, checksum, BBAN).
 
-✅ FR7630006000011234567890189
-✅ DE89370400440532013000
-❌ FR76 3000 6000 0112... (spaces)
+- ✅ FR7630006000011234567890189
+- ✅ DE89370400440532013000
+- ❌ FR76 3000 6000 0112... (spaces)
 
 Remove spaces before testing. Specific formats vary by country.
 
@@ -968,9 +956,9 @@ Remove spaces before testing. Specific formats vary by country.
 ```
 Matches standard 8 or 11-character SWIFT/BIC codes.
 
-✅ BNPAFRPP
-✅ DEUTDEFF500
-❌ BICFRPP123456
+- ✅ BNPAFRPP
+- ✅ DEUTDEFF500
+- ❌ BICFRPP123456
 
 ---
 
@@ -980,10 +968,10 @@ Matches standard 8 or 11-character SWIFT/BIC codes.
 ```
 Matches 16-digit credit card number with optional spaces or dashes.
 
-✅ 4111 1111 1111 1111
-✅ 4111-1111-1111-1111
-✅ 4111111111111111
-❌ 4111-1111-1111
+- ✅ 4111 1111 1111 1111
+- ✅ 4111-1111-1111-1111
+- ✅ 4111111111111111
+- ❌ 4111-1111-1111
 
 This does not validate via the Luhn algorithm.
 
@@ -996,9 +984,9 @@ This does not validate via the Luhn algorithm.
 ```
 Matches comma-separated values on one line.
 
-✅ a,b,c
-❌ a,,c
-❌ a,b,\nc
+- ✅ a,b,c
+- ❌ a,,c
+- ❌ a,b,\nc
 
 ---
 
@@ -1008,8 +996,8 @@ Matches comma-separated values on one line.
 ```
 Matches tab-separated values on one line.
 
-✅ a\tb\tc
-❌ a\t\tc
+- ✅ a\tb\tc
+- ❌ a\t\tc
 
 ---
 
@@ -1019,9 +1007,9 @@ Matches tab-separated values on one line.
 ```
 Matches semicolon-separated values.
 
-✅ a;b;c
-❌ a;;c
-❌ a;b;\nc
+- ✅ a;b;c
+- ❌ a;;c
+- ❌ a;b;\nc
 
 ## 🔖 Slugs & Identifiers
 
@@ -1031,10 +1019,10 @@ Matches semicolon-separated values.
 ```
 Lowercase, hyphenated, SEO-friendly string.
 
-✅ hello-world
-✅ my-article-123
-❌ Hello_World
-❌ hello--world
+- ✅ hello-world
+- ✅ my-article-123
+- ❌ Hello_World
+- ❌ hello--world
 
 ---
 
@@ -1044,8 +1032,8 @@ Lowercase, hyphenated, SEO-friendly string.
 ```
 Matches a version 4 UUID.
 
-✅ 550e8400-e29b-41d4-a716-446655440000
-❌ 550e8400e29b41d4a716446655440000
+- ✅ 550e8400-e29b-41d4-a716-446655440000
+- ❌ 550e8400e29b41d4a716446655440000
 
 ---
 
@@ -1057,10 +1045,10 @@ Matches a version 4 UUID.
 ```
 Matches anything between `<` and `>`, excluding nested or malformed tags.
 
-✅ `<shortcode>`
-✅ `<user_name>`
-❌ <<shortcode>>
-❌ <shortcode
+- ✅ `<shortcode>`
+- ✅ `<user_name>`
+- ❌ <<shortcode>>
+- ❌ <shortcode
 
 ---
 
@@ -1093,7 +1081,6 @@ Matches anything between `<` and `>`, excluding nested or malformed tags.
 
 ---
 
-💡 In all examples:
 - `[^...]` ensures the content does not include the delimiters themselves.
 - Use `g` (global flag) if you want to match multiple shortcodes in one string.
 - Escape characters like `(`, `[`, `{` using `\` inside the regex.
@@ -1106,10 +1093,10 @@ Matches anything between `<` and `>`, excluding nested or malformed tags.
 ```
 Matches 3 or more of the same character in a row.
 
-✅ aaa
-✅ 1111
-❌ ababab
-❌ aa
+- ✅ aaa
+- ✅ 1111
+- ❌ ababab
+- ❌ aa
 
 Change `{2,}` to `{N-1,}` to match N repetitions.
 Example: `{6,}` matches 7 or more.
@@ -1122,9 +1109,9 @@ Example: `{6,}` matches 7 or more.
 ```
 Matches binary data in groups of 8 bits (octets).
 
-✅ 0101010101010101 → `01010101`, `01010101`
-✅ 1111000010101010
-❌ 0101010 (only 7 bits)
+- ✅ 0101010101010101 → `01010101`, `01010101`
+- ✅ 1111000010101010
+- ❌ 0101010 (only 7 bits)
 
 Use with the global flag `/g` to match multiple octets in a stream.
 
@@ -1136,10 +1123,10 @@ Use with the global flag `/g` to match multiple octets in a stream.
 ```
 Matches standard MAC addresses with `:` or `-` as separator.
 
-✅ 00:1A:2B:3C:4D:5E
-✅ 00-1A-2B-3C-4D-5E
-❌ 001A2B3C4D5E
-❌ 00:1A:2B:3C:4D
+- ✅ 00:1A:2B:3C:4D:5E
+- ✅ 00-1A-2B-3C-4D-5E
+- ❌ 001A2B3C4D5E
+- ❌ 00:1A:2B:3C:4D
 
 ---
 
@@ -1149,10 +1136,10 @@ Matches standard MAC addresses with `:` or `-` as separator.
 ```
 Matches raw hex numbers, optionally starting with `0x`, but no `#`.
 
-✅ 0x1A3F
-✅ a4f3
-✅ DEADBEAF
-❌ #FF00FF
+- ✅ 0x1A3F
+- ✅ a4f3
+- ✅ DEADBEAF
+- ❌ #FF00FF
 
 ---
 
@@ -1162,10 +1149,10 @@ Matches raw hex numbers, optionally starting with `0x`, but no `#`.
 ```
 Matches common file size formats.
 
-✅ 100KB
-✅ 5.6 MB
-✅ 2048B
-❌ 5,6MB (comma instead of dot)
+- ✅ 100KB
+- ✅ 5.6 MB
+- ✅ 2048B
+- ❌ 5,6MB (comma instead of dot)
 
 ---
 
@@ -1175,9 +1162,9 @@ Matches common file size formats.
 ```
 Matches a full Windows-style path.
 
-✅ C:\Users\MyFolder\File.txt
-✅ D:\Backup\2024\Logs\log.txt
-❌ /usr/local/bin
+- ✅ C:\Users\MyFolder\File.txt
+- ✅ D:\Backup\2024\Logs\log.txt
+- ❌ /usr/local/bin
 
 ---
 
@@ -1187,9 +1174,9 @@ Matches a full Windows-style path.
 ```
 Matches a Unix-like full path.
 
-✅ /usr/local/bin/python
-✅ /var/log/nginx/access.log
-❌ C:\Program Files
+- ✅ /usr/local/bin/python
+- ✅ /var/log/nginx/access.log
+- ❌ C:\Program Files
 
 ---
 
@@ -1199,9 +1186,9 @@ Matches a Unix-like full path.
 ```
 Matches a valid Base64-encoded block.
 
-✅ TWFu
-✅ U29tZSBkYXRhIHdpdGggZXF1YWwgcGFkZGluZw==
-❌ This is not base64
+- ✅ TWFu
+- ✅ U29tZSBkYXRhIHdpdGggZXF1YWwgcGFkZGluZw==
+- ❌ This is not base64
 
 ---
 
@@ -1209,8 +1196,8 @@ Matches a valid Base64-encoded block.
 ```
 /^[a-f0-9]{32}$/i
 ```
-✅ d41d8cd98f00b204e9800998ecf8427e
-❌ too_short_hash
+- ✅ d41d8cd98f00b204e9800998ecf8427e
+- ❌ too_short_hash
 
 ---
 
@@ -1218,8 +1205,8 @@ Matches a valid Base64-encoded block.
 ```
 /^[a-f0-9]{40}$/i
 ```
-✅ da39a3ee5e6b4b0d3255bfef95601890afd80709
-❌ 123abc
+- ✅ da39a3ee5e6b4b0d3255bfef95601890afd80709
+- ❌ 123abc
 
 ---
 
@@ -1227,8 +1214,8 @@ Matches a valid Base64-encoded block.
 ```
 /^[a-f0-9]{64}$/i
 ```
-✅ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-❌ short_hash
+- ✅ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- ❌ short_hash
 
 ---
 
@@ -1238,9 +1225,9 @@ Matches a valid Base64-encoded block.
 ```
 Matches the 3-part JWT format (header.payload.signature), base64-url encoded.
 
-✅ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0…
-❌ abc.def
-❌ ey... (missing part)
+- ✅ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0…
+- ❌ abc.def
+- ❌ ey... (missing part)
 
 This doesn't validate the signature or payload content.
 
@@ -1250,9 +1237,9 @@ This doesn't validate the signature or payload content.
 ```
 /^\d{9}$/
 ```
-✅ 732829320
-❌ 732 829 320
-❌ 1234567890
+- ✅ 732829320
+- ❌ 732 829 320
+- ❌ 1234567890
 
 ---
 
@@ -1260,8 +1247,8 @@ This doesn't validate the signature or payload content.
 ```
 /^\d{14}$/
 ```
-✅ 73282932000074
-❌ 732 829 320 00074
+- ✅ 73282932000074
+- ❌ 732 829 320 00074
 
 ---
 
@@ -1300,13 +1287,10 @@ Example:
 ```markdown
 Matches strings with only uppercase letters.
 
-✅ HELLO
-
-✅ REGEXP
-
-❌ Hello
-
-❌ hello123
+- ✅ HELLO
+- ✅ REGEXP
+- ❌ Hello
+- ❌ hello123
 
 To allow numbers too, change to `/^[A-Z0-9]+$/`
 
