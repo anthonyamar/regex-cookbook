@@ -1269,14 +1269,10 @@ This doesn't validate the signature or payload content.
 ```
 /^FR[\dA-Z]{2}\d{9}$/
 ```
-✅ FR40303265045
-
-✅ FRXX732829320
-
-❌ FR40303265045123
-
-❌ FR40 3032 6504 5
-
+- ✅ FR40303265045
+- ✅ FRXX732829320
+- ❌ FR40303265045123
+- ❌ FR40 3032 6504 5
 
 Check rules per country for prefix and control key logic.
 
